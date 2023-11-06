@@ -8,6 +8,7 @@ import pi.projeto.projeto.usuario.UsuarioReponseDTO;
 import pi.projeto.projeto.usuario.UsuarioRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -40,5 +41,9 @@ public class UsuarioService {
     public void salvarUsuario(Usuario userData) {
 
         repository.save(userData);
+    }
+
+    public Optional<Usuario> findUserByEmail(String email) {
+        return repository.findByEmail(email);
     }
 }

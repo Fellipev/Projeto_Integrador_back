@@ -52,4 +52,31 @@ public class UsuarioController {
 //        Usuario user = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Usuario nao encontrado."));
         service.deletarUsuario(id);
     }
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/verificarUsuario")
+    public boolean getUserByEmail(@RequestBody UsuarioRequestDTO usuario) {
+
+        Usuario usuarioData = new Usuario(usuario);
+
+        if (usuarioData.getEmail() != null && usuarioData.getSenha() != null) {
+            Optional<Usuario> verificacaoUsuario = service.findUserByEmail(usuarioData.getEmail());
+            if(verificacaoUsuario.isPresent()) {
+                Usuario usuarioBanco = verificacaoUsuario.get();
+                if(usuarioBanco.getSenha().equals(usuarioData.getSenha())) {
+                    System.out.println("Senha valida!");
+                    return true;
+                } else {
+                    System.out.println("Senha invalida!");
+                    return false;
+                }
+//                return ResponseEntity.ok(verificacaoUsuario.get());
+            } else {
+//                return ResponseEntity.notFound().build();
+                return false;
+            }
+        } else {
+//            return ResponseEntity.badRequest().build();
+            return false;
+        }
+    }
 }
