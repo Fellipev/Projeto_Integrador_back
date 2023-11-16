@@ -25,7 +25,7 @@ O sotfware não precisa de servidor, pois o ambiente roda apenas localmente (***
 
 O funcionamento do software e o uso das funcionalidades são exemplificados no vídeo <https://www.ead.senac.br/>. Nesse link, é possível o  acompanhar os procedimentos para cadastro de um novo usuário e o registro do peso.
 
-#### Operções básicas do software ####
+#### Operações básicas do software ####
 1. Realizar cadastroLog 
 2. Log no sistema
 3. Cadastrar massa do usuário
