@@ -29,4 +29,4 @@ O funcionamento do software e o uso das funcionalidades são exemplificados no v
 1. Realizar cadastroLog 
 2. Log no sistema
 3. Cadastrar massa do usuário
-4. Consulta registros de peso
+4. Consultar registros de peso
